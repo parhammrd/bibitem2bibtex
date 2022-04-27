@@ -1,3 +1,3 @@
-# A simple script to make bibtex file from bibitem 
+# A simple script to make BibTeX file from bibitem 
 
-There are a couple of tricks with regex and selenium to scrap google scholar citations from clean BibItem. It makes a bib file due to your cites. hope to develop to improve this useful tool to easily convert bibitem2bibtex
+There are a couple of tricks with regex and selenium to scrap google scholar citations from reading clean BibItems. It makes a bib file due to your cites. I would do more additional to develop this helpful tool to convert bibitem2bibtex quickly.
