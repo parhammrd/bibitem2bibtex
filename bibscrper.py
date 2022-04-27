@@ -8,7 +8,6 @@ from selenium.common.exceptions import NoSuchElementException
 
 def askgoogle(browser, query):
 
-	# browser = webdriver.Chrome(executable_path='/usr/local/bin/chromedriver')
 	browser.get('https://scholar.google.com')
 
 	inputfield = browser.find_element(By.ID, 'gs_hdr_tsi')
@@ -33,10 +32,8 @@ def askgoogle(browser, query):
 					break
 		break
 
-	# browser.close()
 	browser.get(lref)
 	return browser.find_element(By.TAG_NAME, 'pre').text
-	# return requests.get(lref).content.decode('ascii')
 
 if __name__ == '__main__':
 
@@ -48,21 +45,18 @@ if __name__ == '__main__':
 
 	print('There are ' + str(len(Sources)) + ' Bibitems')
 
-	bs = webdriver.Chrome(executable_path='/usr/local/bin/chromedriver')
+	bs = webdriver.Chrome(executable_path='../chromedriver')
 	for item in Sources:
 		if (True):
 			bibtex = askgoogle(bs, item[1])
 
 		pls = re.search(r'\w{(.*?),', bibtex)
 
-		# print(bibtex[:pls.span()[0]+2]+item[0]+bibtex[pls.span()[1]-1:])
-
 		with open('citation.bib', 'a') as wfile:
 			wfile.write(bibtex[:pls.span()[0]+2]+item[0]+bibtex[pls.span()[1]-1:]+'\n')
 
-		# break
-
-
+		break
+	
 	# print(bibtex)
 
 	bs.close()
